@@ -123,3 +123,25 @@ hero-subtitle {
     height: auto;
     margin: 20px;
 }
+
+/* table section */
+
+table {
+    border-collapse: collapse;
+    width: 60%;
+    margin: 0 auto;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-align: left;
+}
+
+table, th, td {
+    border: 1px solid #333;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    width: 25%;
+}
