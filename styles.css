@@ -25,10 +25,11 @@ nav.navbar {
     color: white;
 }
 
-nav.title {
+nav .title {
     font-size: 2rem;
     margin-right: auto;
     color: white;
+    text-decoration: none;
 }
 
 .nav-links {
@@ -41,6 +42,7 @@ nav.title {
     font-size: 1rem;
     color: white;
     transition: text-decoration 300ms ease-in-out;
+    text-decoration: none;
 }
 
 .nav-links a:hover {
@@ -229,7 +231,6 @@ th, td {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     border-radius: 10px;
     text-align: center;
@@ -237,9 +238,11 @@ th, td {
 .flashcard-front {
     background-color: #3498db;
     color: white;
+    padding: 20px;
 }
 .flashcard-back {
     background-color: #2ecc71;
     color: white;
     transform: rotateY(180deg);
+    padding: 20px;
 }
