@@ -5,16 +5,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" href="./styles.css">
+        <script src="script.js"></script>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="#home">Manipularea</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+    <div id="navbar">
+        <nav class="navbar">
+            <a class="title" href="/">Manipularea</a>
+            <div class="nav-links">
+                <a class="element" href="#hero">tipuri de manipulare</a>
+                <a class="element" href="meet-the-team.html">item1</a>
+                <a class="element" href="classes.html">item2</a>
+                <a class="element" href="history.html">item3</a>
+                <a class="element" href="contact.html">item4</a>
+            </div>
+            <button id="menu-button">
+                <img src="images/menu.png" alt="Menu" height="25px">
+            </button>
+        </nav>
+    </div>
 
     <section id="hero">
 
@@ -39,7 +47,54 @@
             </div> -->
         </div>
     </section>
-    <section id="table-section"></section>
+
+    <section id="flashcards">
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><h3>Manipularea emoțională</h3></div>
+                <div class="flashcard-back"><p>Exploatarea sentimentelor pentru a influența deciziile (ex. victimizare, culpabilizare).</p></div>
+            </div>
+        </div>
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><h3>Manipularea psihologică</h3></div>
+                <div class="flashcard-back"><p>Folosirea tehnicilor subtile pentru a controla gândurile sau percepțiile cuiva (ex. gaslighting).</p></div>
+            </div>
+        </div>
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><h3>Manipularea socială</h3></div>
+                <div class="flashcard-back"><p>Influențarea unui grup prin presiune socială sau norme culturale.</p></div>
+            </div>
+        </div>
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><h3>Manipularea politică</h3></div>
+                <div class="flashcard-back"><p>Dezinformare sau propagandă pentru a câștiga sprijin sau a discredita oponentul.</p></div>
+            </div>
+        </div>
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><h3>Manipularea economică</h3></div>
+                <div class="flashcard-back"><p>Controlarea piețelor, prețurilor sau resurselor pentru avantaje financiare.</p></div>
+            </div>
+        </div>
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><h3>Manipularea prin mass-media</h3></div>
+                <div class="flashcard-back"><p>Prezentarea selectivă a informațiilor pentru a modela opinia publică.</p></div>
+            </div>
+        </div>
+        <div class="flashcard">
+            <div class="flashcard-inner">
+                <div class="flashcard-front"><h3>Manipularea prin persuasiune</h3></div>
+                <div class="flashcard-back"><p>Folosirea argumentelor sau tehnicilor retorice pentru a influența deciziile altora.</p></div>
+            </div>
+        </div>
+    </section>
+
+    </section>
+    <!-- <section id="table-section"></section>
         <p class="table-paragraph">Cele mai intalnite tipuri de manipulare și descrierea acestora:</p>
         <table>
             <tr>
@@ -71,6 +126,6 @@
                 <td>Folosirea argumentelor sau tehnicilor retorice pentru a influența deciziile altora.</td>
             </tr>
         </table>
-    </section>
+    </section> -->
 </body>
 </html>
