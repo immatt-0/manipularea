@@ -374,6 +374,29 @@
         margin-bottom: 0;
     }
     
+/* Responsive styles */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 50px; /* Reduce padding on smaller screens */
+    }
+
+    .container {
+        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0 20px; /* Further reduce padding on mobile */
+    }
+
+    .box {
+        height: auto; /* Allow boxes to adjust height based on content */
+    }
+}
+    
+ /* footer section  */
+
     footer {
         bottom: 0;
         width: 100%;
