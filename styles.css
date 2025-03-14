@@ -203,6 +203,19 @@ th, td {
  
 /* flashcard section */
 
+.center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    margin: 0;
+}
+
+.bold-text {
+    font-weight: bold;
+    font-size: 2rem; /* Optional: Adjust size of text */
+}
+
 #flashcards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 5fr));
