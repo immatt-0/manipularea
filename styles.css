@@ -5,6 +5,10 @@
         font-family: 'Roboto', sans-serif;
     }
 
+    section {
+        padding: 25px;
+    }
+
     .spacer {
         height: 50px;
     }
