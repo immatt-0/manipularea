@@ -6,14 +6,18 @@
         <title>Document</title>
         <link rel="stylesheet" href="./styles.css">
         <script src="script.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
 </head>
 <body>
     <div id="navbar">
         <nav class="navbar">
             <a class="title" href="/">Manipularea</a>
             <div class="nav-links">
-                <a class="element" href="#hero">tipuri de manipulare</a>
-                <a class="element" href="meet-the-team.html">item1</a>
+                <a class="element" href="#info">ce este manipularea?</a>
+                <a class="element" href="#flashcards">tipuri de manipulare</a>
                 <a class="element" href="classes.html">item2</a>
                 <a class="element" href="history.html">item3</a>
                 <a class="element" href="contact.html">item4</a>
@@ -38,58 +42,69 @@
     <section id="info">
         <div class="info-container">
             <div class="info-text"></div>
-                <p class="info-text">Manipularea este influențarea intenționată și subtilă a gândurilor, emoțiilor sau comportamentului unei persoane sau grup, <br>
-                de obicei în scopul obținerii unui avantaj, adesea prin metode înșelătoare, distorsionarea realității sau exploatarea vulnerabilităților.</p>
+                <p class="info-text">Manipularea este actul de a influența sau controla subtil gândurile, emoțiile sau acțiunile unei persoane, adesea fără ca aceasta să își dea seama. Poate fi realizată prin mijloace psihologice, emoționale, sociale, politice sau economice și este utilizată frecvent pentru a obține putere, avantaje sau conformare. <br> Manipularea implică adesea tactici precum înșelăciunea, persuasiunea, exploatarea vulnerabilităților și distorsionarea sau reținerea informațiilor. Deși nu este întotdeauna negativă—cum ar fi în marketing sau negocieri—manipularea este deseori asociată cu comportamente neetice atunci când exploatează încrederea sau emoțiile cu scopuri egoiste. De exemplu, manipularea emoțională se bazează pe sentimente precum vinovăția sau frica, în timp ce manipularea politică și cea prin mass-media influențează percepția publicului prin informații selective sau propagandă.<br>Recunoașterea manipulării este esențială pentru gândirea critică și luarea deciziilor informate. Conștientizând aceste tactici, oamenii se pot proteja mai bine de influențe care le-ar putea afecta interesele.</p>
             </div>
             <!-- <div class="info-image">
                 <img src="path/to/your/image.jpg" alt="Description of image">
             </div> -->
         </div>
     </section>
+
     <div class="center-div"><h2 class="bold-text">Tipuri de manipulare</h2></div>
+
     <section id="flashcards">
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="flashcard-front"><h3>Manipularea emoțională</h3></div>
-                <div class="flashcard-back"><p>Exploatarea sentimentelor pentru a influența deciziile (ex. victimizare, culpabilizare).</p></div>
+            <div class="flashcard-container">
+                <!-- First row with 4 flashcards -->
+                <div class="first-row">
+                    <div class="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><h3>Manipularea emoțională</h3></div>
+                            <div class="flashcard-back"><p>Exploatarea sentimentelor pentru a influența deciziile (ex. victimizare, culpabilizare).</p></div>
+                        </div>
+                    </div>
+                    <div class="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><h3>Manipularea psihologică</h3></div>
+                            <div class="flashcard-back"><p>Folosirea tehnicilor subtile pentru a controla gândurile sau percepțiile cuiva (ex. gaslighting).</p></div>
+                        </div>
+                    </div>
+                    <div class="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><h3>Manipularea socială</h3></div>
+                            <div class="flashcard-back"><p>Influențarea unui grup prin presiune socială sau norme culturale.</p></div>
+                        </div>
+                    </div>
+                    <div class="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><h3>Manipularea politică</h3></div>
+                            <div class="flashcard-back"><p>Dezinformare sau propagandă pentru a câștiga sprijin sau a discredita oponentul.</p></div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Second row with 3 flashcards, centered under gaps -->
+                <div class="second-row">
+                    <div class="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><h3>Manipularea economică</h3></div>
+                            <div class="flashcard-back"><p>Controlarea piețelor, prețurilor sau resurselor pentru avantaje financiare.</p></div>
+                        </div>
+                    </div>
+                    <div class="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><h3>Manipularea prin mass-media</h3></div>
+                            <div class="flashcard-back"><p>Prezentarea selectivă a informațiilor pentru a modela opinia publică.</p></div>
+                        </div>
+                    </div>
+                    <div class="flashcard">
+                        <div class="flashcard-inner">
+                            <div class="flashcard-front"><h3>Manipularea prin persuasiune</h3></div>
+                            <div class="flashcard-back"><p>Folosirea argumentelor sau tehnicilor retorice pentru a influența deciziile altora.</p></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="flashcard-front"><h3>Manipularea psihologică</h3></div>
-                <div class="flashcard-back"><p>Folosirea tehnicilor subtile pentru a controla gândurile sau percepțiile cuiva (ex. gaslighting).</p></div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="flashcard-front"><h3>Manipularea socială</h3></div>
-                <div class="flashcard-back"><p>Influențarea unui grup prin presiune socială sau norme culturale.</p></div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="flashcard-front"><h3>Manipularea politică</h3></div>
-                <div class="flashcard-back"><p>Dezinformare sau propagandă pentru a câștiga sprijin sau a discredita oponentul.</p></div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="flashcard-front"><h3>Manipularea economică</h3></div>
-                <div class="flashcard-back"><p>Controlarea piețelor, prețurilor sau resurselor pentru avantaje financiare.</p></div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="flashcard-front"><h3>Manipularea prin mass-media</h3></div>
-                <div class="flashcard-back"><p>Prezentarea selectivă a informațiilor pentru a modela opinia publică.</p></div>
-            </div>
-        </div>
-        <div class="flashcard">
-            <div class="flashcard-inner">
-                <div class="flashcard-front"><h3>Manipularea prin persuasiune</h3></div>
-                <div class="flashcard-back"><p>Folosirea argumentelor sau tehnicilor retorice pentru a influența deciziile altora.</p></div>
-            </div>
-        </div>
+    </div>
     </section>
 
 </body>
