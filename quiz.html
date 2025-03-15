@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz - Testează-ți cunoștințele</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="./styles.css">
+        <script src="quiz.js" defer></script>
+    </head>
+<body>
+    <div id="navbar">
+        <nav class="navbar">
+            <a class="title" href="/">Manipularea</a>
+            <div class="nav-links">
+                <a class="element" href="ce-este-manipularea.html">ce este manipularea?</a>
+                <a class="element" href="tipuri.html">tipuri de manipulare</a>
+                <a class="element" href="tehnici.html">tehnici de manipulare</a>
+                <a class="element" href="despre.html">de ce?</a>
+                <a class="element" href="quiz.html">quiz</a>
+            </div>
+            <button id="menu-button">
+                <img src="images/icons8-menu-384.png" alt="Menu" height="25px">
+            </button>
+        </nav>
+    </div>
+
+    <main>
+        <section id="quiz-hero">
+            <div class="info-container">
+                <div class="center-div">
+                    <h1 class="bold-text">Teste de Auto-Evaluare</h1>
+                </div>
+                <p class="info-text">Aceste teste te vor ajuta să înțelegi mai bine relația ta cu manipularea, atât din perspectiva unei potențiale victime, cât și a propriului comportament.</p>
+            </div>
+        </section>
+
+        <section id="quiz-container" class="quiz-section">
+            <div class="quiz-selector info-container">
+                <h2>Alege testul pe care dorești să-l completezi:</h2>
+                <div class="quiz-buttons">
+                    <button id="victim-quiz-btn" class="action-button">Sunt manipulat(ă)?</button>
+                    <button id="manipulator-quiz-btn" class="action-button">Manifest comportamente manipulative?</button>
+                </div>
+            </div>
+
+            <div class="info-container">
+                <div id="quiz">
+                    <div id="quiz-start" class="quiz-card">
+                        <h2 id="quiz-title">Alege un test pentru a începe</h2>
+                        <p id="quiz-description"></p>
+                        <p class="quiz-disclaimer">Notă: Acest test este doar orientativ și nu înlocuiește o evaluare profesională. Dacă ai îngrijorări serioase, te încurajăm să consulți un specialist.</p>
+                        <button id="start-btn" class="action-button">Începe Testul</button>
+                    </div>
+                    <div id="quiz-questions" class="quiz-card" style="display: none;">
+                        <h2 id="question"></h2>
+                        <div id="answers" class="answers-container">
+                            <!-- Answers will be inserted here by JavaScript -->
+                        </div>
+                        <button id="next-btn" class="action-button" style="display: none;">Următoarea întrebare</button>
+                    </div>
+                    <div id="quiz-results" class="quiz-card" style="display: none;">
+                        <h2>Rezultate</h2>
+                        <p id="score"></p>
+                        <div id="feedback"></div>
+                        <div id="recommendations"></div>
+                        <button id="retry-btn" class="action-button">Încearcă alt test</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="quiz-section">
+            <div class="info-container">
+                <h2>Surse și Mențiuni</h2>
+                <div class="sources-box">
+                    <p>Aceste teste au fost adaptate și traduse din următoarele surse:</p>
+                    <ul>
+                        <li><a href="https://www.besttherapists.com/blog/am-i-being-manipulated-quiz" target="_blank">Am I Being Manipulated Quiz</a> - Best Therapists</li>
+                        <li><a href="https://www.besttherapists.com/blog/am-i-manipulative-quiz" target="_blank">Am I Manipulative Quiz</a> - Best Therapists</li>
+                    </ul>
+                </div>
+                <div class="disclaimer-box">
+                    <h3>Disclaimer Important</h3>
+                    <p>Aceste teste sunt doar instrumente educaționale și de auto-reflecție. Ele nu sunt:</p>
+                    <ul>
+                        <li>Instrumente de diagnostic profesional</li>
+                        <li>Înlocuitori pentru evaluarea sau tratamentul profesional</li>
+                        <li>Baze pentru decizii majore în viață fără consultarea unui specialist</li>
+                    </ul>
+                    <p>Dacă te confrunți cu situații de manipulare sau ai îngrijorări despre propriul comportament, te încurajăm să:</p>
+                    <ul>
+                        <li>Consulți un specialist în sănătate mentală</li>
+                        <li>Discuți cu un consilier sau terapeut</li>
+                        <li>Cauți ajutor profesional pentru evaluare și îndrumare</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section id="footer">
+        <footer>
+            <p>Proiect realizat de către Burghiu Matei - elev la liceul Teoretic "Nikolaus Lenau", Timișoara <br>
+                Coordonator: prof. Angela Avrămuț</p>
+            <p>Concursul Național Istorie și Societate în Dimensiune Virtuală</p>
+            <p>&copy; Designed by Burghiu Matei</p>
+        </footer>
+    </section>
+</body>
+</html> 

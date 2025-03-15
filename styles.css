@@ -823,8 +823,15 @@ footer p:last-child {
     margin-bottom: 2rem;
     padding: 1rem;
     border-radius: 10px;
-    background: linear-gradient(135deg, #2c3e50, #3498db);
+    background: linear-gradient(135deg, #024950, #0FA4AF);
     color: white;
+}
+
+.subject-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
 .subject-icon {
@@ -949,6 +956,216 @@ footer p:last-child {
 
     .main-definition {
         font-size: 1.1rem;
+    }
+}
+
+/* ==========================================================================
+   Quiz Styles
+   ========================================================================== */
+#quiz-hero {
+    margin-top: 100px;
+}
+
+.quiz-section {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.quiz-selector {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.quiz-selector h2 {
+    color: #003135;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.quiz-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.quiz-buttons .action-button {
+    min-width: 250px;
+    margin: 0.5rem;
+}
+
+.quiz-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 15px rgba(0, 49, 53, 0.15);
+    margin-bottom: 2rem;
+}
+
+.quiz-card h2 {
+    color: #003135;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+}
+
+.quiz-disclaimer {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #fff5f5;
+    border-radius: var(--border-radius);
+    border-left: 4px solid #e74c3c;
+    font-size: 0.9rem;
+    color: #2c3e50;
+}
+
+.answers-container {
+    display: grid;
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.answer-btn {
+    background: #f5f6fa;
+    border: 2px solid #e1e8ed;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    font-family: var(--font-primary);
+    font-size: 1rem;
+    color: #2c3e50;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: left;
+    width: 100%;
+}
+
+.answer-btn:hover {
+    background: #e1e8ed;
+    transform: translateY(-2px);
+}
+
+.answer-btn.selected {
+    border-color: #3498db;
+    background: #f1f9ff;
+}
+
+#score {
+    font-size: 1.5rem;
+    color: #003135;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+#feedback {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background: #f7f9fc;
+    border-left: 4px solid #3498db;
+}
+
+#recommendations {
+    margin: 1.5rem 0;
+    padding: 1rem;
+    border-radius: var(--border-radius);
+    background: #f0f9ff;
+    border-left: 4px solid #27ae60;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .quiz-section {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .quiz-card {
+        padding: 1.5rem;
+    }
+
+    .quiz-card h2 {
+        font-size: 1.5rem;
+    }
+
+    .answer-btn {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .quiz-buttons .action-button {
+        min-width: 200px;
+    }
+}
+
+/* Sources and Disclaimer Styles */
+.sources-box, .disclaimer-box {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    margin: 1rem 0;
+}
+
+.sources-box {
+    border-left: 4px solid #3498db;
+}
+
+.disclaimer-box {
+    border-left: 4px solid #e74c3c;
+}
+
+.sources-box h2, .disclaimer-box h3 {
+    color: #003135;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.sources-box ul, .disclaimer-box ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1rem 0;
+}
+
+.sources-box li, .disclaimer-box li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #024950;
+}
+
+.sources-box li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #3498db;
+}
+
+.disclaimer-box li:before {
+    content: "!";
+    position: absolute;
+    left: 0;
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.sources-box a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.sources-box a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .sources-box, .disclaimer-box {
+        padding: 1rem;
+    }
+    
+    .sources-box li, .disclaimer-box li {
+        font-size: 0.9rem;
     }
 }
       
