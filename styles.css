@@ -266,7 +266,7 @@ nav .title:hover {
    ========================================================================== */
 
 #flashcards {
-    overflow-y: scroll;
+    overflow-x: scroll;
 }
 
 .flashcard-container {
@@ -394,23 +394,24 @@ nav .title:hover {
 }
 
 .box {
-    padding: 20px 20px 0;
+    padding: 30px;
     background-color: white;
     border: 1px solid #AFDDE5;
     box-shadow: 0 4px 8px rgba(0, 49, 53, 0.1);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
     border-radius: var(--border-radius);
 }
 
 .box h3 {
     margin-top: 0;
+    margin-bottom: 20px;
 }
 
 .box p {
-    margin-bottom: 0;
-    flex-grow: 1;
+    margin: 0;
+    padding-bottom: 30px;
 }
 
 /* ==========================================================================
@@ -667,6 +668,15 @@ footer p:last-child {
 
     .gap-button-container {
         grid-column: span 1;
+    }
+    
+    .box {
+        margin-bottom: 30px;
+        padding: 30px;
+    }
+
+    .box p {
+        padding-bottom: 0;
     }
 }
 
@@ -1483,6 +1493,49 @@ footer p:last-child {
 
     .help-list li {
         padding: 0.8rem 0;
+    }
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #003135;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+}
+
+.back-to-top:hover {
+    background-color: #0FA4AF;
+    transform: translateY(-3px);
+}
+
+.back-to-top span {
+    font-size: 20px;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .back-to-top {
+        bottom: 15px;
+        right: 15px;
+        width: 35px;
+        height: 35px;
     }
 }
       

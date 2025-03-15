@@ -13,7 +13,7 @@
 <body>
     <div id="navbar">
         <nav class="navbar">
-            <a class="title" href="/">Manipularea</a>
+            <a class="title" href="index.html">Manipularea</a>
             <div class="nav-links">
                 <a class="element" href="ce-este-manipularea.html">ce este manipularea?</a>
                 <a class="element" href="tipuri.html">tipuri de manipulare</a>
@@ -150,5 +150,29 @@
             <p>&copy; Designed by Burghiu Matei</p>
         </footer>
     </section>
+
+    <button class="back-to-top" id="backToTop" title="Înapoi sus">
+        <span>↑</span>
+    </button>
+
+    <script>
+        // Back to top button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('visible');
+            } else {
+                backToTopButton.classList.remove('visible');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
