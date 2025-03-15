@@ -189,6 +189,93 @@ const manipulatorQuiz = {
     ]
 };
 
+const knowledgeQuiz = {
+    title: "Testează-ți cunoștințele despre manipulare",
+    description: "Acest test evaluează cât de bine ai înțeles conceptele și informațiile prezentate despre manipulare. Răspunde la întrebări pentru a-ți testa cunoștințele.",
+    questions: [
+        {
+            question: "Care dintre următoarele NU este un tip de manipulare prezentat pe site?",
+            answers: [
+                "Manipularea fizică",
+                "Manipularea emoțională",
+                "Manipularea psihologică",
+                "Manipularea socială"
+            ],
+            correctAnswer: 0
+        },
+        {
+            question: "Ce este 'gaslighting'-ul?",
+            answers: [
+                "O formă de manipulare prin complimente excesive",
+                "O tehnică de a face pe cineva să se simtă vinovat",
+                "O metodă de a face victima să se îndoiască de propria realitate",
+                "O strategie de manipulare prin amenințări directe"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "Ce este 'love bombing'?",
+            answers: [
+                "O tehnică de manipulare prin afecțiune și atenție excesivă",
+                "O formă de șantaj emoțional",
+                "O metodă de manipulare prin izolare socială",
+                "O strategie de manipulare prin critică constantă"
+            ],
+            correctAnswer: 0
+        },
+        {
+            question: "Care este scopul principal al manipulării prin mass-media?",
+            answers: [
+                "Distrugerea relațiilor personale",
+                "Obținerea de beneficii financiare directe",
+                "Modelarea opiniei publice prin prezentarea selectivă a informațiilor",
+                "Crearea de conflicte între grupuri sociale"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "De ce este important să recunoaștem manipularea?",
+            answers: [
+                "Doar pentru a evita relațiile toxice",
+                "Pentru a manipula mai eficient la rândul nostru",
+                "Pentru a ne proteja și a face alegeri informate în toate aspectele vieții",
+                "Exclusiv pentru situații profesionale"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "Care dintre următoarele este un semn al manipulării emoționale?",
+            answers: [
+                "Comunicare deschisă și onestă",
+                "Respect pentru limitele personale",
+                "Inducerea sentimentului de vinovăție pentru control",
+                "Încurajarea independenței"
+            ],
+            correctAnswer: 2
+        },
+        {
+            question: "Ce rol are manipularea psihologică?",
+            answers: [
+                "Să ajute la dezvoltarea personală",
+                "Să controleze gândurile sau percepțiile cuiva",
+                "Să îmbunătățească relațiile sociale",
+                "Să promoveze comunicarea deschisă"
+            ],
+            correctAnswer: 1
+        },
+        {
+            question: "Care este efectul manipulării prin teamă?",
+            answers: [
+                "Creșterea încrederii în sine",
+                "Îmbunătățirea relațiilor sociale",
+                "Forțarea deciziilor sub presiune",
+                "Dezvoltarea gândirii critice"
+            ],
+            correctAnswer: 2
+        }
+    ]
+};
+
 // Quiz state
 let currentQuiz = null;
 let currentQuestion = 0;
@@ -198,6 +285,7 @@ let quizStarted = false;
 // DOM elements
 const victimQuizBtn = document.getElementById('victim-quiz-btn');
 const manipulatorQuizBtn = document.getElementById('manipulator-quiz-btn');
+const knowledgeQuizBtn = document.getElementById('knowledge-quiz-btn');
 const startBtn = document.getElementById('start-btn');
 const nextBtn = document.getElementById('next-btn');
 const retryBtn = document.getElementById('retry-btn');
@@ -215,6 +303,7 @@ const quizDescriptionEl = document.getElementById('quiz-description');
 // Event listeners
 victimQuizBtn.addEventListener('click', () => selectQuiz(victimQuiz));
 manipulatorQuizBtn.addEventListener('click', () => selectQuiz(manipulatorQuiz));
+knowledgeQuizBtn.addEventListener('click', () => selectQuiz(knowledgeQuiz));
 startBtn.addEventListener('click', startQuiz);
 nextBtn.addEventListener('click', nextQuestion);
 retryBtn.addEventListener('click', resetQuiz);
@@ -248,8 +337,8 @@ function showQuestion() {
     
     question.answers.forEach((answer, index) => {
         const button = document.createElement('button');
-        button.classList.add('answer-btn');
         button.textContent = answer;
+        button.classList.add('answer-btn');
         button.addEventListener('click', () => selectAnswer(index));
         answersEl.appendChild(button);
     });
@@ -260,17 +349,21 @@ function showQuestion() {
 // Select answer
 function selectAnswer(index) {
     const buttons = answersEl.getElementsByClassName('answer-btn');
-    const question = currentQuiz.questions[currentQuestion];
-    
-    // Remove previous selections
     for (let button of buttons) {
-        button.disabled = true;
         button.classList.remove('selected');
+        button.disabled = true;
     }
-    
-    // Show selection
     buttons[index].classList.add('selected');
-    score += question.scores[index];
+    
+    if (currentQuiz === knowledgeQuiz) {
+        // For knowledge quiz, check if answer is correct
+        if (index === currentQuiz.questions[currentQuestion].correctAnswer) {
+            score++;
+        }
+    } else {
+        // For other quizzes, add score based on index
+        score += currentQuiz.questions[currentQuestion].scores[index];
+    }
     
     nextBtn.style.display = 'block';
 }
@@ -278,7 +371,6 @@ function selectAnswer(index) {
 // Next question
 function nextQuestion() {
     currentQuestion++;
-    
     if (currentQuestion < currentQuiz.questions.length) {
         showQuestion();
     } else {
@@ -291,59 +383,73 @@ function showResults() {
     quizQuestions.style.display = 'none';
     quizResults.style.display = 'block';
     
-    const maxScore = currentQuiz.questions.length * 4;
-    const percentage = (score / maxScore) * 100;
-    
-    scoreEl.textContent = `Scor: ${score} din ${maxScore} puncte`;
-    
-    // Provide feedback based on score and quiz type
-    let feedback = '';
-    let recommendations = '';
-    
-    if (currentQuiz === victimQuiz) {
-        if (percentage <= 25) {
-            feedback = "Rezultatele sugerează că este puțin probabil să fii într-o relație manipulatoare.";
-            recommendations = "Continuă să menții limite sănătoase în relațiile tale și să fii atent(ă) la semnele de manipulare.";
-        } else if (percentage <= 50) {
-            feedback = "Există unele semne de comportament manipulator în relația ta, dar nu par să fie severe.";
-            recommendations = "Ar fi util să discuți cu persoana respectivă despre comportamentele care te deranjează și să stabilești limite clare.";
-        } else if (percentage <= 75) {
-            feedback = "Rezultatele indică prezența unor comportamente manipulative semnificative în relația ta.";
-            recommendations = "Este important să iei în considerare consultarea unui specialist și să evaluezi serios impactul acestei relații asupra ta.";
+    if (currentQuiz === knowledgeQuiz) {
+        // Results for knowledge quiz
+        const percentage = (score / currentQuiz.questions.length) * 100;
+        scoreEl.textContent = `Ai răspuns corect la ${score} din ${currentQuiz.questions.length} întrebări (${percentage.toFixed(1)}%)`;
+        
+        let feedback = '';
+        let recommendations = '';
+        
+        if (percentage >= 90) {
+            feedback = "Excelent! Ai o înțelegere foarte bună a conceptelor despre manipulare.";
+            recommendations = "Continuă să te informezi și să împărtășești cunoștințele tale cu alții pentru a-i ajuta să recunoască și să prevină manipularea.";
+        } else if (percentage >= 70) {
+            feedback = "Bine! Ai o bună înțelegere a majorității conceptelor despre manipulare.";
+            recommendations = "Recitește secțiunile unde ai avut dificultăți pentru a-ți consolida cunoștințele.";
+        } else if (percentage >= 50) {
+            feedback = "Acceptabil. Ai înțeles conceptele de bază, dar mai este loc de îmbunătățire.";
+            recommendations = "Îți sugerăm să revezi materialele de pe site, în special secțiunile despre tipurile și tehnicile de manipulare.";
         } else {
-            feedback = "Rezultatele indică un nivel ridicat de manipulare în relația ta.";
-            recommendations = "Te încurajăm să cauți ajutor profesional și să iei măsuri pentru a-ți proteja bunăstarea emoțională și fizică.";
+            feedback = "Ai nevoie de mai multă informare despre conceptele de manipulare.";
+            recommendations = "Îți recomandăm să parcurgi din nou toate secțiunile site-ului și să acorzi o atenție deosebită exemplelor practice.";
         }
+        
+        feedbackEl.textContent = feedback;
+        recommendationsEl.textContent = recommendations;
     } else {
-        if (percentage <= 25) {
-            feedback = "Rezultatele sugerează că manifești rareori comportamente manipulative.";
-            recommendations = "Continuă să menții relații sănătoase bazate pe respect și comunicare deschisă.";
-        } else if (percentage <= 50) {
-            feedback = "Există unele tendințe de comportament manipulator în acțiunile tale.";
-            recommendations = "Încearcă să fii mai conștient(ă) de aceste comportamente și să dezvolți modalități mai sănătoase de a-ți exprima nevoile.";
-        } else if (percentage <= 75) {
-            feedback = "Rezultatele indică prezența unor comportamente manipulative semnificative în modul tău de a interacționa cu alții.";
-            recommendations = "Ar fi benefic să lucrezi cu un specialist pentru a dezvolta modalități mai sănătoase de comunicare și relaționare.";
+        // Existing results logic for other quizzes
+        const maxScore = currentQuiz.questions.length * 4;
+        const percentage = (score / maxScore) * 100;
+        
+        scoreEl.textContent = `Scorul tău: ${percentage.toFixed(1)}%`;
+        
+        let feedback = '';
+        let recommendations = '';
+        
+        if (percentage >= 75) {
+            feedback = currentQuiz === victimQuiz
+                ? "Rezultatele indică un nivel ridicat de manipulare în relația evaluată."
+                : "Rezultatele indică prezența unor comportamente manipulative semnificative.";
+            recommendations = "Este recomandat să consulți un specialist pentru suport și îndrumare.";
+        } else if (percentage >= 50) {
+            feedback = currentQuiz === victimQuiz
+                ? "Există unele semne de manipulare în relația evaluată."
+                : "Sunt prezente unele comportamente manipulative în interacțiunile tale.";
+            recommendations = "Ar fi util să evaluezi mai atent dinamica relațiilor tale și să consideri discuții cu un specialist.";
         } else {
-            feedback = "Rezultatele indică un nivel ridicat de comportamente manipulative.";
-            recommendations = "Te încurajăm să cauți ajutor profesional pentru a înțelege originea acestor comportamente și a dezvolta relații mai sănătoase.";
+            feedback = currentQuiz === victimQuiz
+                ? "Nu par să existe semne semnificative de manipulare în relația evaluată."
+                : "Nu par să existe tendințe manipulative semnificative în comportamentul tău.";
+            recommendations = "Continuă să fii atent(ă) la dinamica relațiilor tale și menține limite sănătoase.";
         }
+        
+        feedbackEl.textContent = feedback;
+        recommendationsEl.textContent = recommendations;
     }
-    
-    feedbackEl.textContent = feedback;
-    recommendationsEl.textContent = recommendations;
 }
 
 // Reset quiz
 function resetQuiz() {
     currentQuiz = null;
-    quizStarted = false;
     currentQuestion = 0;
     score = 0;
+    quizStarted = false;
     
     quizStart.style.display = 'block';
     quizQuestions.style.display = 'none';
     quizResults.style.display = 'none';
+    
     quizTitleEl.textContent = "Alege un test pentru a începe";
     quizDescriptionEl.textContent = "";
     startBtn.style.display = 'none';
