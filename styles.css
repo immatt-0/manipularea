@@ -1168,4 +1168,321 @@ footer p:last-child {
         font-size: 0.9rem;
     }
 }
+
+/* ==========================================================================
+   History Page Styles
+   ========================================================================== */
+.history-section,
+.contemporary-section,
+.psychology-section {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+.section-title {
+    color: #003135;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-family: var(--font-heading);
+}
+
+/* Timeline Styles */
+.timeline-container {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-item {
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.history-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.history-list li {
+    margin-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.history-list li:before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    color: #0FA4AF;
+    font-size: 0.8rem;
+}
+
+.history-list li strong {
+    display: block;
+    color: #003135;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+/* Case Studies Grid */
+.case-studies-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.case-study-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 49, 53, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.case-study-card .subject-header,
+.study-card .subject-header {
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.case-study-card .subject-header h3,
+.study-card .subject-header h3 {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+.case-study-card .content-box,
+.study-card .content-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.case-study-card ul,
+.study-card .study-details ul {
+    flex: 1;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.case-study-card .example-box,
+.study-card .study-details {
+    margin-top: auto;
+    padding-top: 1rem;
+}
+
+/* Psychology Studies */
+.psychology-studies {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.study-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 49, 53, 0.1);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.study-card p {
+    margin: 0 0 1rem 0;
+}
+
+.study-details h4 {
+    color: #003135;
+    margin: 0 0 1rem 0;
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+    .history-section,
+    .contemporary-section,
+    .psychology-section {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .case-studies-grid,
+    .psychology-studies {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .case-study-card .subject-header,
+    .study-card .subject-header {
+        min-height: 60px;
+    }
+
+    .case-study-card .subject-header h3,
+    .study-card .subject-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .case-study-card .content-box,
+    .study-card .content-box {
+        padding: 1rem;
+    }
+
+    .timeline-item {
+        margin-bottom: 2rem;
+    }
+
+    .study-card,
+    .case-study-card {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   Resources Page Styles
+   ========================================================================== */
+.resources-section,
+.help-section {
+    padding: 2rem;
+    margin: 2rem auto;
+    max-width: 1200px;
+}
+
+/* Video Grid */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.video-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 49, 53, 0.1);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-card h3 {
+    padding: 1rem;
+    margin: 0;
+    color: #003135;
+}
+
+.video-card p {
+    padding: 0 1rem 1rem;
+    margin: 0;
+    color: #024950;
+}
+
+/* Help Grid */
+.help-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.help-card {
+    background: white;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 49, 53, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.help-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.help-list li {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 49, 53, 0.1);
+}
+
+.help-list li:last-child {
+    border-bottom: none;
+}
+
+.help-list strong {
+    display: block;
+    color: #003135;
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.help-list p {
+    margin: 0.5rem 0;
+    color: #024950;
+}
+
+.help-list a {
+    color: #0FA4AF;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.help-list a:hover {
+    color: #003135;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .video-grid,
+    .help-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .resources-section,
+    .help-section {
+        padding: 1rem;
+        margin: 1rem;
+    }
+
+    .help-list li {
+        padding: 0.8rem 0;
+    }
+}
       
