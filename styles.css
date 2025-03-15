@@ -348,80 +348,70 @@
     .container {
         display: grid;
         grid-template-columns: 1fr 1fr; /* Two equal columns */
-        gap: 20px; /* Gap between the divs */
-        width: calc(100% - 400px); /* Set the width of the container to 100% minus 400px (200px padding on each side) */
-        margin: 0 auto; /* Center the container horizontally */
-        padding: 0 200px; /* Add 200px padding on each side */
-        align-items: center; /* Vertically center the divs */
-    }
+        gap: 20px; /* Space between divs */
+        width: calc(100% - 400px); /* Centered container */
+        margin: 0 auto;
+        padding: 0 200px;
+        align-items: stretch; /* Make items stretch to fill container height */
+    }    
     
     .box {
-        padding: 20px;
+        padding: 20px 20px 0;
         background-color: #fff;
         border: 1px solid #ccc;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        height: 80%; /* Set a fixed height for the divs */
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Vertically center content inside the box */
-    }    
-    
+        height: 100%; /* Ensure full height */
+    }
+
     .box h3 {
         margin-top: 0;
     }
     
     .box p {
         margin-bottom: 0;
+        flex-grow: 1; /* Allow paragraph to grow and fill space */
     }
     
-/* Responsive styles */
-@media (max-width: 1024px) {
-    .container {
-        padding: 0 50px; /* Reduce padding on smaller screens */
+    .gap-button-container {
+        grid-column: span 2; /* Make button span both columns */
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        padding: 20px;
     }
 
+    .action-button {
+        padding: 15px 30px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .action-button:hover {
+        background-color: #45a049;
+    }
+
+    /* Responsive */
+@media (max-width: 1024px) {
     .container {
-        grid-template-columns: 1fr; /* Stack columns on smaller screens */
+        grid-template-columns: 1fr; /* Stack boxes */
+        padding: 0 50px;
+    }
+
+    .gap-button-container {
+        grid-column: span 1; /* Keep button centered */
     }
 }
 
 @media (max-width: 600px) {
     .container {
-        padding: 0 20px; /* Further reduce padding on mobile */
+        padding: 0 20px;
     }
-
-    .box {
-        height: auto; /* Allow boxes to adjust height based on content */
-    }
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-.gap-button-container {
-    width: 100%; /* Make button container span the full width */
-    display: flex;
-    justify-content: center;
-    margin-top: 20px; /* space above the button */
-}
-
-.action-button {
-    padding: 15px 0; /* Make the button taller */
-    width: 100%; /* Make the button span the full width */
-    font-size: 16px;
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.action-button:hover {
-    background-color: #45a049;
 }
 
  /* footer section  */
