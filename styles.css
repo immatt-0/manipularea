@@ -719,6 +719,7 @@ footer p:last-child {
         border-radius: 0 0 var(--border-radius) var(--border-radius);
         min-width: 200px;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        z-index: 1000;
     }
 
     .nav-links.active {
@@ -734,14 +735,20 @@ footer p:last-child {
         padding: 0.4rem 0;
     }
 
-    /* Layout */
-    section {
-        margin: 10px;
+    /* Hero Section */
+    #hero {
+        min-height: 70vh;
+        font-size: 150%;
+    }
+
+    #hero:before {
+        min-height: 70vh;
     }
 
     /* Info Section */
     .info-container {
-        padding: 40px 15px;
+        padding: 20px 15px;
+        margin: 10px;
     }
 
     .info-title {
@@ -750,80 +757,184 @@ footer p:last-child {
 
     .info-text {
         font-size: 1rem;
+        padding: 0 10px;
     }
 
     /* Flashcards */
     .flashcard-container {
-        grid-template-columns: repeat(2, 1fr);
+        width: 95%;
+        padding: 0 10px;
     }
 
     .first-row, .second-row {
-        grid-template-columns: repeat(2, 1fr);
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .flashcard {
+        width: 100%;
+        max-width: 300px;
+        height: 200px;
     }
 
     /* Feature Cards */
     .feature-cards-section {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    /* Despre Page */
-    #despre-hero {
-        margin-top: 80px;
-    }
-
-    .despre-section {
-        margin: 20px 10px;
-    }
-
-    .despre-section .subject-header {
-        padding: 20px;
-        margin: -15px -15px 15px -15px;
-    }
-
-    .despre-section .subject-header h3 {
-        font-size: 1.6rem;
-    }
-
-    .despre-section .subject-icon {
-        font-size: 2.4rem;
-    }
-
-    .manipulation-types,
-    .defense-strategies {
         grid-template-columns: 1fr;
-        gap: 20px;
+        padding: 10px;
+        gap: 15px;
     }
 
-    .conclusion-box {
+    .feature-card {
+        padding: 15px;
+    }
+
+    /* Q&A Section */
+    .container {
+        grid-template-columns: 1fr;
+        padding: 0 15px;
+        gap: 15px;
+    }
+
+    .box {
         padding: 20px;
     }
 
-    .conclusion-box p {
-        font-size: 1.1rem;
+    /* Content Sections */
+    .content-section {
+        padding: 15px;
+    }
+
+    .subject-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .subject-icon {
+        font-size: 2rem;
+        margin-bottom: 10px;
+    }
+
+    .definition-box, .examples-box {
+        padding: 15px;
+    }
+
+    /* Quiz Section */
+    .quiz-section {
+        padding: 15px;
+    }
+
+    .quiz-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .quiz-buttons .action-button {
+        width: 100%;
+    }
+
+    .answer-btn {
+        padding: 12px;
+        font-size: 0.9rem;
+    }
+
+    /* Resources Section */
+    .video-grid, .help-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .video-container {
+        margin-bottom: 15px;
+    }
+
+    /* History Section */
+    .case-studies-grid, .psychology-studies {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .timeline-item {
+        padding: 10px;
     }
 
     /* Footer */
     footer {
-        padding: 0;
-        margin: 0;
+        padding: 15px;
     }
 
     footer p {
-        font-size: 14px;
-    }
-
-    footer p:first-child {
-        font-size: 16px;
-    }
-
-    footer p:last-child {
-        font-size: 12px;
+        font-size: 0.9rem;
     }
 }
 
-@media (max-width: 600px) {
-    .container {
-        padding: 0 20px;
+@media (max-width: 480px) {
+    /* Additional small screen adjustments */
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .action-button {
+        width: 100%;
+        padding: 12px;
+    }
+
+    .flashcard-front h3, .flashcard-back p {
+        font-size: 0.9rem;
+        padding: 15px;
+    }
+
+    .feature-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .feature-card p {
+        font-size: 0.9rem;
+    }
+}
+
+/* Fix for iOS Safari 100vh issue */
+@supports (-webkit-touch-callout: none) {
+    #hero {
+        min-height: -webkit-fill-available;
+    }
+    #hero:before {
+        min-height: -webkit-fill-available;
+    }
+}
+
+/* Improve touch targets */
+@media (hover: none) {
+    .nav-links a, .action-button {
+        padding: 12px 0;
+    }
+    
+    .flashcard {
+        cursor: pointer;
+    }
+}
+
+/* Prevent text size adjustment on orientation change */
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+/* Improve scrolling performance */
+* {
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Fix for sticky hover states on mobile */
+@media (hover: none) {
+    .feature-card:hover,
+    .nav-links a:hover,
+    .action-button:hover {
+        transform: none;
     }
 }
 
