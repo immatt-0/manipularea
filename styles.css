@@ -1554,6 +1554,7 @@ html {
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     margin-top: 2rem;
+    align-items: start;
 }
 
 .help-card {
@@ -1566,19 +1567,44 @@ html {
     flex-direction: column;
 }
 
-.help-list {
-    list-style: none;
-    padding: 0;
+.help-card .subject-header {
+    background: linear-gradient(135deg, #024950, #0FA4AF);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.help-card .subject-header h3 {
+    color: white;
+    margin: 0;
+    font-size: 1.3rem;
+}
+
+.help-card .subject-icon {
+    font-size: 1.8rem;
     margin: 0;
 }
 
+.help-list {
+    flex: 1;
+    padding: 1.5rem;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
 .help-list li {
-    padding: 1rem 0;
+    padding: 0;
     border-bottom: 1px solid rgba(0, 49, 53, 0.1);
+    padding-bottom: 1.5rem;
 }
 
 .help-list li:last-child {
     border-bottom: none;
+    padding-bottom: 0;
 }
 
 .help-list strong {
@@ -1598,6 +1624,8 @@ html {
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 500;
+    display: inline-block;
+    margin-top: 0.5rem;
 }
 
 .help-list a:hover {
@@ -1606,20 +1634,26 @@ html {
 }
 
 @media (max-width: 768px) {
-    .video-grid,
     .help-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
-    .resources-section,
-    .help-section {
+    .help-card .subject-header {
+        padding: 0.8rem;
+    }
+
+    .help-card .subject-header h3 {
+        font-size: 1.2rem;
+    }
+
+    .help-list {
         padding: 1rem;
-        margin: 1rem;
+        gap: 1rem;
     }
 
     .help-list li {
-        padding: 0.8rem 0;
+        padding-bottom: 1rem;
     }
 }
 
