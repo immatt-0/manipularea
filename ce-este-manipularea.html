@@ -16,10 +16,10 @@
             <a class="title" href="/">Manipularea</a>
             <div class="nav-links">
                 <a class="element active" href="ce-este-manipularea.html">ce este manipularea?</a>
+                <a class="element" href="istorie.html">istoria manipulării</a>
                 <a class="element" href="tipuri.html">tipuri de manipulare</a>
                 <a class="element" href="tehnici.html">tehnici de manipulare</a>
                 <a class="element" href="despre.html">de ce?</a>
-                <a class="element" href="istorie.html">istoria manipulării</a>
                 <a class="element" href="quiz.html">quiz</a>
                 <a class="element" href="resurse.html">resurse</a>
             </div>
@@ -145,7 +145,7 @@
     <section id="footer">
         <footer>
             <p>Proiect realizat de către Burghiu Matei - elev la liceul Teoretic "Nikolaus Lenau", Timișoara <br>
-                Coordonator: prof. Angela Avrămuț</p>
+                Coordonator: prof. Angela Avrămuț, prof. Rușeț Ovidiu</p>
             <p>Concursul Național Istorie și Societate în Dimensiune Virtuală</p>
             <p>&copy; Designed by Burghiu Matei</p>
         </footer>
@@ -154,25 +154,5 @@
     <button class="back-to-top" id="backToTop" title="Înapoi sus">
         <span>↑</span>
     </button>
-
-    <script>
-        // Back to top button functionality
-        const backToTopButton = document.getElementById('backToTop');
-        
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopButton.classList.add('visible');
-            } else {
-                backToTopButton.classList.remove('visible');
-            }
-        });
-        
-        backToTopButton.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-    </script>
 </body>
 </html>
