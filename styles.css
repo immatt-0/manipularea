@@ -7,15 +7,57 @@
     --font-heading: 'Oswald', sans-serif;
 }
 
-body {
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
     margin: 0;
     padding: 0;
+}
+
+body {
     font-family: var(--font-primary);
     background-color: #AFDDE5;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     line-height: 1.6;
+}
+
+/* Ensure all sections and containers respect viewport width */
+section, .container, .info-container, .feature-cards-section, .flashcard-container {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* Adjust hero section to prevent overflow */
+#hero {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#hero:before {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Ensure navbar stays within viewport */
+#navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    width: calc(100% - 40px);
+    max-width: 1600px;
+    box-sizing: border-box;
+}
+
+/* Adjust container padding for smaller screens */
+@media (max-width: 1024px) {
+    .container {
+        width: 95%;
+        padding: 0 15px;
+    }
 }
 
 /* Typography */
@@ -54,16 +96,6 @@ main {
 /* ==========================================================================
    Navigation
    ========================================================================== */
-#navbar {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    width: calc(100% - 40px);
-    max-width: 1600px;
-}
-
 nav.navbar {
     font-family: var(--font-heading);
     padding: 0.6rem 1.5rem;
@@ -417,9 +449,10 @@ nav .title:hover {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 20px;
-    width: calc(100% - 400px);
+    width: 90%;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 200px;
+    padding: 0 20px;
     align-items: stretch;
 }
 
@@ -813,6 +846,7 @@ footer p:last-child {
     /* Q&A Section */
     .container {
         grid-template-columns: 1fr;
+        width: 100%;
         padding: 0 15px;
         gap: 15px;
     }
