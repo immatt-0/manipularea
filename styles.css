@@ -31,13 +31,37 @@ section, .container, .info-container, .feature-cards-section, .flashcard-contain
 
 /* Adjust hero section to prevent overflow */
 #hero {
-    width: 100%;
-    box-sizing: border-box;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    font-family: var(--font-heading);
+    font-size: 180%;
 }
 
 #hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    box-sizing: border-box;
+    height: 100%;
+    background: url(/images/team.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.4;
+    z-index: 1;
+}
+
+#hero > div {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
 }
 
 /* Ensure navbar stays within viewport */
@@ -192,33 +216,6 @@ nav .title:hover {
 /* ==========================================================================
    Hero Section
    ========================================================================== */
-#hero {
-    position: relative;
-    min-height: 85vh;
-    z-index: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-family: var(--font-heading);
-    font-size: 180%;
-}
-
-#hero:before {
-    content: " ";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    min-height: 90vh;
-    opacity: .4;
-    z-index: -1;
-    background: url(/images/team.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
 .hero-subtitle {
     font-size: 1.3rem;
     font-weight: 300;
